@@ -9,12 +9,12 @@ class SquareIconButton extends StatelessWidget {
   final double borderRadius;
 
   const SquareIconButton(
-      {Key key,
-      @required this.onPressed,
+      {Key? key,
+      required this.onPressed,
       this.iconColor = COLOR_GREEN,
       this.buttonColor = Colors.white,
       this.width = 70,
-      @required this.icon,
+      required this.icon,
       this.borderRadius = 10})
       : super(key: key);
 
