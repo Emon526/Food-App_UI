@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:foodapp/screens/landing_screen.dart';
 import 'package:foodapp/utils/constants.dart';
-import '';
 
 void main() {
   runApp(MyApp());

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/screens/product_item.dart';
+import 'package:foodapp/screens/product_page.dart';
 import 'package:foodapp/utils/constants.dart';
 import 'package:foodapp/utils/widget_functions.dart';
 
@@ -54,6 +55,14 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
+  final FocusNode _focusNode = FocusNode();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _focusNode.unfocus();
+  }
+
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
@@ -174,7 +183,15 @@ class _LandingScreenState extends State<LandingScreen> {
                                 child: Row(
                                   children: PRODUCT_DATA
                                       .map((data) => InkWell(
-                                            onTap: () {},
+                                            onTap: () {
+                                              _focusNode.unfocus();
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          ProductPage(
+                                                              productData:
+                                                                  data)));
+                                            },
                                             child: ProductItem(
                                                 productData: data,
                                                 width: constraints.maxWidth *
