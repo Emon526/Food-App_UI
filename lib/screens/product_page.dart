@@ -9,7 +9,7 @@ import 'package:foodapp/utils/constants.dart';
 class ProductPage extends StatefulWidget {
   final Map<String, dynamic> productData;
 
-  const ProductPage({Key key, @required this.productData}) : super(key: key);
+  const ProductPage({Key? key, required this.productData}) : super(key: key);
 
   @override
   _ProductPageState createState() => _ProductPageState();
@@ -17,7 +17,7 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   final GlobalKey<SlideActionState> _buttonKey = GlobalKey<SlideActionState>();
-  bool addedToCart = false; // Just for Demonstration
+  bool addedToCart = false;
 
   @override
   Widget build(BuildContext context) {
@@ -49,17 +49,18 @@ class _ProductPageState extends State<ProductPage> {
                                 ),
                               ),
                               Positioned(
-                                  top: 10,
-                                  left: 10,
-                                  child: SquareIconButton(
-                                    icon: Icons.arrow_back_ios_outlined,
-                                    width: 50,
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    buttonColor: Colors.orange.shade100,
-                                    iconColor: Colors.orange,
-                                  ))
+                                top: 10,
+                                left: 10,
+                                child: SquareIconButton(
+                                  icon: Icons.arrow_back_ios_outlined,
+                                  width: 50,
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  buttonColor: Colors.orange.shade100,
+                                  iconColor: Colors.orange,
+                                ),
+                              )
                             ],
                           ),
                         ),
@@ -99,7 +100,8 @@ class _ProductPageState extends State<ProductPage> {
                                                   TextSpan(
                                                       text:
                                                           "${widget.productData['rest']}",
-                                                      style: textTheme.subtitle2
+                                                      style: textTheme
+                                                          .subtitle2!
                                                           .apply(
                                                               color:
                                                                   COLOR_GREY))
@@ -117,7 +119,7 @@ class _ProductPageState extends State<ProductPage> {
                                               TextSpan(
                                                   text:
                                                       "${widget.productData['price']}",
-                                                  style: textTheme.headline5
+                                                  style: textTheme.headline5!
                                                       .apply(
                                                           color: COLOR_ORANGE))
                                             ])),
@@ -142,7 +144,7 @@ class _ProductPageState extends State<ProductPage> {
                                                 TextSpan(
                                                     text:
                                                         "${widget.productData['rating']}",
-                                                    style: textTheme.bodyText2
+                                                    style: textTheme.bodyText2!
                                                         .apply(
                                                             fontWeightDelta: 4))
                                               ])),
@@ -156,7 +158,7 @@ class _ProductPageState extends State<ProductPage> {
                                                         size: 15)),
                                                 TextSpan(
                                                     text: " 18 Mins",
-                                                    style: textTheme.bodyText2
+                                                    style: textTheme.bodyText2!
                                                         .apply(
                                                             fontWeightDelta: 4))
                                               ])),
@@ -170,7 +172,7 @@ class _ProductPageState extends State<ProductPage> {
                                                         size: 15)),
                                                 TextSpan(
                                                     text: "2.3 KM",
-                                                    style: textTheme.bodyText2
+                                                    style: textTheme.bodyText2!
                                                         .apply(
                                                             fontWeightDelta: 4))
                                               ])),
@@ -185,7 +187,7 @@ class _ProductPageState extends State<ProductPage> {
                                     addVerticalSpace(10),
                                     Text(
                                       "A pizza that decidedly staggers under an overload of golden corn, exotic black olives, crunchy onions, crisp capsicum, succulent mushrooms, juicyfresh tomatoes and jalapeno - with extra cheese to go all around. A pizza that goes ballistic on veggies! Check out this mouth watering overload of crunchy, crisp capsicum, succulent mushrooms and fresh tomatoes",
-                                      style: textTheme.subtitle2
+                                      style: textTheme.subtitle2!
                                           .apply(heightDelta: 2.0),
                                     ),
                                     addVerticalSpace(100),

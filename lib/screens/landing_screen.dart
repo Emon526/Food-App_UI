@@ -48,7 +48,7 @@ const CATEGORIES = [
 ];
 
 class LandingScreen extends StatefulWidget {
-  const LandingScreen({Key key}) : super(key: key);
+  const LandingScreen({Key? key}) : super(key: key);
 
   @override
   _LandingScreenState createState() => _LandingScreenState();
@@ -105,7 +105,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                   Expanded(
                                       child: Text(
                                     "How Hungry Are you Today ?",
-                                    style: textTheme.headline5.apply(
+                                    style: textTheme.headline5!.apply(
                                       color: Colors.white,
                                     ),
                                   ))
@@ -170,7 +170,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                   Expanded(child: Center()),
                                   Text(
                                     "View All > ",
-                                    style: textTheme.subtitle2
+                                    style: textTheme.subtitle2!
                                         .apply(color: COLOR_ORANGE),
                                   ),
                                   addHorizontalSpace(10),
@@ -231,7 +231,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                                   addVerticalSpace(10),
                                                   Text(
                                                     "${category['name']}",
-                                                    style: textTheme.bodyText2
+                                                    style: textTheme.bodyText2!
                                                         .apply(
                                                             color: COLOR_BLACK),
                                                   ),

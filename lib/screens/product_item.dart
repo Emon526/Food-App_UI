@@ -6,7 +6,8 @@ class ProductItem extends StatelessWidget {
   final Map<String, dynamic> productData;
   final double width;
 
-  const ProductItem({Key key, this.productData, this.width}) : super(key: key);
+  const ProductItem({Key? key, required this.productData, required this.width})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     final TextTheme texttheme = Theme.of(context).textTheme;
@@ -81,7 +82,7 @@ class ProductItem extends StatelessWidget {
                             TextSpan(
                               text: "${productData['rating']}",
                               style:
-                                  texttheme.subtitle2.apply(fontSizeDelta: 4),
+                                  texttheme.subtitle2!.apply(fontSizeDelta: 4),
                             )
                           ]),
                         )),
@@ -94,11 +95,11 @@ class ProductItem extends StatelessWidget {
                             TextSpan(
                               text: "\$",
                               style:
-                                  texttheme.subtitle2.apply(fontSizeDelta: 4),
+                                  texttheme.subtitle2!.apply(fontSizeDelta: 4),
                             ),
                             TextSpan(
                               text: "${productData['price']}",
-                              style: texttheme.headline5
+                              style: texttheme.headline5!
                                   .apply(color: COLOR_ORANGE),
                             ),
                           ]),
