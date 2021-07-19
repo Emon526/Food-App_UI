@@ -1,6 +1,6 @@
-# foodapp
-
-A new Flutter project.
+# food App UI
+ 
+A new Flutter food App UI project.
 
 ## Getting Started
 
